@@ -1,8 +1,76 @@
+$ColorHeadingAndParagraph: #D0D6F9;
+$ColorHeadingSpaceAndExploreBG: #FFFFFF;
+$ExploreText: #0B0D17;
+
 .homeMainContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	width: 100%;
+	height: 100%;
 	min-width: 100%;
 	min-height: 100%;
+	padding: 9vw 11.5vw;
 	background-image: url(../../public/img/home/background-home-desktop.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;
+}
+
+.textContainer {
+	width: 40%;
+
+	h1 {
+		color: $ColorHeadingAndParagraph;
+		font-family: 'Barlow Condensed', sans-serif;
+		font-size: 2.8rem;
+		letter-spacing: 4.72px;
+
+		span {
+			display: block;
+			color: $ColorHeadingSpaceAndExploreBG;
+			font-family: 'Bellefair', serif;
+			font-size: 15rem;
+			margin: 3.5rem 0rem;
+		}
+	}
+
+	p {
+		color: $ColorHeadingAndParagraph;
+		font-family: 'Barlow', sans-serif;
+		font-size: 1.8rem;
+		line-height: 32px;
+	}
+
+}
+
+.navExploreContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	right: 6%;
+	bottom: 6%;
+	width: 30vw;
+	height: 30vw;
+	border-radius: 50%;
+
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.136);
+	}
+
+	.navExplore {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 19vw;
+		height: 19vw;
+		border-radius: 50%;
+		background-color: $ColorHeadingSpaceAndExploreBG;
+		text-decoration: none;
+		color: $ExploreText;
+		font-family: 'Bellefair', serif;
+		font-size: 3.2rem;
+	}
+
 }

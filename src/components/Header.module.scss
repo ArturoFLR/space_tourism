@@ -1,5 +1,13 @@
 $Color_Text: #FFFFFF;
-$Nav_BG_Color: rgb(255, 255, 255, 0.04);
+$Color_Nav_BG: rgb(255, 255, 255, 0.04);
+$Color_Nav_Line: #979797;
+
+// ANIMATIONS
+@keyframes selected {
+	0% {scale: 1;}
+	50% {scale: 1.05;}
+	100% {scale: 1;}
+}
 
 .mainContainer {
 	display: flex;
@@ -13,38 +21,59 @@ $Nav_BG_Color: rgb(255, 255, 255, 0.04);
 		display: block;
 		width: 48px;
 		height: 48px;
-	}
-
-	.line {
-		position: relative;
-		left: 1%;
-		width: 34%;
-		height: 1px;
-		margin-left: 3rem;
-		border: 1px solid #979797;
-		opacity: 0.25;
-		z-index: 2;
+		margin-left: 3.5rem;
 	}
 }
 
 .nav_container {
 	display: flex;
 	align-items: center;
-	width: 61%;
+	position: relative;
+	width: 57%;
 	height: 100%;
-	background-color: $Nav_BG_Color;
+	background-color: $Color_Nav_BG;
 	backdrop-filter: blur(15px);
-	font-size: 1rem;
-	font-family: "Barlow Condensed", sans-serif;
-	letter-spacing: 2.7px;
-	color: $Color_Text;
 	padding-left: 8rem;
 
-	p {
+	.line {
+		position: absolute;
+		left: -61%;
+		width: 58%;
+		height: 1px;
+		margin-left: 3rem;
+		border: 1px solid $Color_Nav_Line;
+		opacity: 0.25;
+		z-index: 2;
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		height: 100%;
 		margin-right: 3rem;
+		text-decoration: none;
+		font-size: 1.6rem;
+		font-family: "Barlow Condensed", sans-serif;
+		letter-spacing: 2.7px;
+		color: $Color_Text; 
 
 		span {
-			font-weight: 800;
+			font-weight: bold;
+			margin-right: 0.7rem;
+		}
+	}
+
+	.linkActive {
+		border-bottom: 3px solid white;
+		margin-top: 2.5px;
+		animation: selected 0.5s;
+	}
+
+	.linkInactive {
+
+		&:hover {
+			border-bottom: 3px solid $Color_Nav_Line;
+			margin-top: 2.5px;
 		}
 	}
 }
