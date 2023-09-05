@@ -48,7 +48,7 @@ function Header() {
 				</NavLink>
 
 				<NavLink
-					to="/space_tourism/destination"
+					to="/space_tourism/destination/moon"
 					className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive}
 					onClick={handleClickMobileMenu}
 				>
@@ -56,7 +56,7 @@ function Header() {
 				</NavLink>
 
 				<NavLink 
-					to="/space_tourism/crew"
+					to="/space_tourism/crew/douglas"
 					className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive}
 					onClick={handleClickMobileMenu}
 				>
@@ -64,7 +64,7 @@ function Header() {
 				</NavLink>
 
 				<NavLink 
-					to="/space_tourism/technology"
+					to="/space_tourism/technology/launch-vehicle"
 					className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive}
 					onClick={handleClickMobileMenu}
 				>

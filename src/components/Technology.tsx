@@ -61,9 +61,9 @@ function Technology ({technology, technologyData} : TechnologyProps) {
 
 				<div className={styles.technologyImgContainer}>
 					<picture className={styles.technologyImg}>
-						<source media="(min-width: 1000px)" srcSet={`../../public/${technologyData[technology].images.portrait}`}></source> 
-						<source media="(max-width: 999px)" srcSet={`../../public/${technologyData[technology].images.landscape}`}></source>						
-						<img alt={`../../public/${technologyData[technology].name}`} src={`../../public/${technologyData[technology].images.portrait}`}></img>
+						<source media="(min-width: 1000px)" srcSet={`../${technologyData[technology].images.portrait}`}></source> 
+						<source media="(max-width: 999px)" srcSet={`../${technologyData[technology].images.landscape}`}></source>						
+						<img alt={technologyData[technology].name} src={`../${technologyData[technology].images.portrait}`}></img>
 					</picture>
 				</div>
 			</section>

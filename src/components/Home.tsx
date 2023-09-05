@@ -11,7 +11,7 @@ function Home() {
 			</section>
 
 			<div className={styles.navExploreContainer}>
-				<NavLink to="/space_tourism/destination" className={styles.navExplore}>EXPLORE</NavLink>
+				<NavLink to="/space_tourism/destination/moon" className={styles.navExplore}>EXPLORE</NavLink>
 			</div>
 
 		</div>

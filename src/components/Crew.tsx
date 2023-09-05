@@ -62,7 +62,7 @@ function Crew ({person, personData} : CrewProps) {
 
 				<div className={styles.personImgContainer}>
 					<figure className={styles.personImg}>
-						<img alt={personData[person].name} src={`../../public/${personData[person].images.png}`} ></img>
+						<img alt={personData[person].name} src={`../${personData[person].images.png}`} ></img>
 					</figure>
 				</div>
 

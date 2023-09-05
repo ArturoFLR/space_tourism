@@ -25,7 +25,7 @@ function Destination ({planet, planetData} : DestinationProps) {
 					<h1 className={styles.pickDestinationH1}><span>01</span> Pick your destination</h1>
 
 					<figure className={styles.planetImg}>
-						<img alt={planetData[planet].name} src={planetData[planet].images.png} ></img>
+						<img alt={planetData[planet].name} src={`../${planetData[planet].images.png}`} ></img>
 					</figure>
 				</div>
 

@@ -28,19 +28,17 @@ function App() {
 				)}
 
 				 {/* DESTINATION ROUTES */}
-				{["/space_tourism/destination", "/space_tourism/destination/moon"].map((path, index) =>
-					<Route path={path} key={index} element={
-						<>
-							<div className={styles.header}>
-								<Header />
-							</div>
-							<main className={styles.main}>
-								<Destination planet={0} planetData={destinations} />
-							</main>
-						</>
-					} />
-				)}
-
+				<Route path="/space_tourism/destination/moon" element={
+					<>
+						<div className={styles.header}>
+							<Header />
+						</div>
+						<main className={styles.main}>
+							<Destination planet={0} planetData={destinations} />
+						</main>
+					</>
+				} />
+				
 				<Route path="/space_tourism/destination/mars" element={
 					<>
 						<div className={styles.header}>
@@ -75,18 +73,16 @@ function App() {
 				} />
 				
 				{/* CREW ROUTES */}
-				{["/space_tourism/crew", "/space_tourism/crew/douglas"].map((path, index) =>
-					<Route path={path} key={index} element={
-						<>
-							<div className={styles.header}>
-								<Header />
-							</div>
-							<main className={styles.main}>
-								<Crew person={0} personData={crew} />
-							</main>
-						</>
-					} />
-				)}
+				<Route path="/space_tourism/crew/douglas" element={
+					<>
+						<div className={styles.header}>
+							<Header />
+						</div>
+						<main className={styles.main}>
+							<Crew person={0} personData={crew} />
+						</main>
+					</>
+				} />
 
 				<Route path="/space_tourism/crew/mark" element={
 					<>
@@ -122,18 +118,16 @@ function App() {
 				} />
 
 				{/* TECHNOLOGY ROUTES */}
-				{["/space_tourism/technology", "/space_tourism/technology/launch-vehicle"].map((path, index) =>
-					<Route path={path} key={index} element={
-						<>
-							<div className={styles.header}>
-								<Header />
-							</div>
-							<main className={styles.main}>
-								<Technology technology={0} technologyData={technology} />
-							</main>
-						</>
-					} />
-				)}
+				<Route path="/space_tourism/technology/launch-vehicle" element={
+					<>
+						<div className={styles.header}>
+							<Header />
+						</div>
+						<main className={styles.main}>
+							<Technology technology={0} technologyData={technology} />
+						</main>
+					</>
+				} />
 
 				<Route path="/space_tourism/technology/spaceport" element={
 					<>
