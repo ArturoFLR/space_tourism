@@ -1,47 +1,77 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.scss";
-
-// type HeaderProps = {
-// 	navSelected: number,
-// }
+import { useState, useRef} from "react";
 
 function Header() {
+
+	const [mobileMenuState, setMobileMenuState] = useState(false);
+	let mobileMenuFlag = useRef(0);
+
+	function handleClickMobileMenu () {
+		mobileMenuFlag.current = 1;
+		setMobileMenuState(!mobileMenuState)
+	}
+
+	function assignMobileMenuClasses() {
+		if (mobileMenuState === false && mobileMenuFlag.current === 1) {
+			return `${styles.nav_container} ${styles.closeMobileMenu}`;
+		} else if (mobileMenuState === true) {
+			return `${styles.nav_container} ${styles.openMobileMenu}`;
+		} else {
+			return styles.nav_container;
+		}
+	}	
+
 	return (
-		<div className={styles.mainContainer}>
-			<img className={styles.logo} src="../../public/img/shared/logo.svg" alt="Logo" />
-			<nav className={styles.nav_container} aria-label="primary">
+		<header className={styles.mainContainer}>
+			<img className={styles.logo} src="img/shared/logo.svg" alt="Logo" />
+			<img 
+				className={styles.menuMobile} 
+				src={
+					mobileMenuState === false ? "img/shared/icon-hamburger.svg" : "img/shared/icon-close.svg" 
+				}
+				alt="Mobile Menu" 
+				onClick={handleClickMobileMenu}
+			/>
+			<nav 
+				className={assignMobileMenuClasses()}				
+				aria-label="primary"
+			>
 				<div className={styles.line}></div>
 				<NavLink 
 					to="/space_tourism/" 
 					className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive}
+					onClick={handleClickMobileMenu}
 					end
 				>
-					<span>00</span> HOME
+					<span>00</span> Home
 				</NavLink>
 
 				<NavLink
 					to="/space_tourism/destination"
 					className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive}
+					onClick={handleClickMobileMenu}
 				>
-					<span>01</span> DESTINATION
+					<span>01</span> Destination
 				</NavLink>
 
 				<NavLink 
 					to="/space_tourism/crew"
 					className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive}
+					onClick={handleClickMobileMenu}
 				>
-					<span>02</span> CREW
+					<span>02</span> Crew
 				</NavLink>
 
 				<NavLink 
 					to="/space_tourism/technology"
 					className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive}
+					onClick={handleClickMobileMenu}
 				>
-					<span>03</span> TECHNOLOGY
+					<span>03</span> Technology
 				</NavLink>
-
 			</nav>
-		</div>
+		</header>
 	)
 }
 
