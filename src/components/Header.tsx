@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.scss";
 import { useState, useRef} from "react";
+import logoUrl from "/public/img/shared/logo.svg";
+import menuHamburgerUrl from "/public/img/shared/icon-hamburger.svg";
+import menuCloseUrl from "/public/img/shared/icon-close.svg";
 
 function Header() {
 
@@ -24,11 +27,11 @@ function Header() {
 
 	return (
 		<header className={styles.mainContainer}>
-			<img className={styles.logo} src="img/shared/logo.svg" alt="Logo" />
+			<img className={styles.logo} src={logoUrl} alt="Logo" />
 			<img 
 				className={styles.menuMobile} 
 				src={
-					mobileMenuState === false ? "img/shared/icon-hamburger.svg" : "img/shared/icon-close.svg" 
+					mobileMenuState === false ? menuHamburgerUrl : menuCloseUrl 
 				}
 				alt="Mobile Menu" 
 				onClick={handleClickMobileMenu}
